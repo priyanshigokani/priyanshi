@@ -30,9 +30,4 @@ printf("\n%d/%d=%d",num1,num2,(float)result);
 result=num1%num2;
 printf("\n%d %d =%d",num1,num2,(int)result);
 
-
-
-
-
-
 }
