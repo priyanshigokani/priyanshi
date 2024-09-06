@@ -1,5 +1,4 @@
-Q.11  Write a program in C to read a sentence and replace lowercase characters with 
-uppercase and vice versa. 
+// Q.11  Write a program in C to read a sentence and replace lowercase characters with uppercase and vice versa. 
 
 #include <stdio.h>
 
@@ -26,5 +25,4 @@ void main()
 
     printf("sentence into upper case: %s", str);
 
-    return 0;
 }

@@ -3,46 +3,34 @@
 
 #include <stdio.h>
 
-int compareStrings(char str1[], char str2[]) {
-    int i = 0;
+void main()
+{
+    char str1[50],str2[50];
+    int i,f=0;
 
-    // Compare characters of both strings one by one
-    while (str1[i] != '\0' && str2[i] != '\0') {
-        if (str1[i] != str2[i]) {
-            return str1[i] - str2[i]; // Return the difference if characters don't match
+    printf("enter first string: ");
+    gets(str1);
+
+    printf("enter second string: ");
+    gets(str2);
+
+    for(i=0; str1[i]!=NULL; i++)
+    {
+        
+        if(str1[i] != str2[i])
+        {
+            f=1;
+            break;
         }
-        i++;
     }
-
-    // If both strings ended together, they are equal
-    if (str1[i] == '\0' && str2[i] == '\0') {
-        return 0;
+    
+    if(f == 1)
+    {
+        printf("strings are not same");
     }
-
-    // If one string is longer than the other
-    return (str1[i] != '\0') ? 1 : -1;
-}
-
-void  main() {
-    char str1[100], str2[100];
-
-    // Input two strings
-    printf("Enter the first string: ");
-    scanf("%s", str1);
-
-    printf("Enter the second string: ");
-    scanf("%s", str2);
-
-    // Compare the strings
-    int result = compareStrings(str1, str2);
-
-    // Output the result
-    if (result == 0) {
-        printf("The strings are same.\n");
-     } else if (result < 0) {
-         printf("strings are different.\n");
-    } else {
-        printf("strings are different.\n");
+    else
+    {
+        printf("strings are same");
     }
 
 }

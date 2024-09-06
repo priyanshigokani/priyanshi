@@ -3,43 +3,22 @@
 #include <stdio.h>
 #include <string.h>
 
-void stringConcat(char *destination, const char *source) 
+void main()
 {
- while (*destination) 
+    char str1[50],str2[50],i,j;
+
+    printf("enter your first string: ");
+    scanf("%s",str1);
+
+    printf("enter your second string: ");
+    scanf("%s"str2);
+
+    for(i=0; str[i]!='\0'; ++i);
+    for(j=0; str[j]!='\0'; ++j,++i)
     {
-        destination++;
+        str1[i]=str2[j];
     }
 
-    while (*source) 
-    {
-        *destination++ = *source++;
-    }
-
-    *destination = 0;
-}
-
-int main() {
-    char str1[200]; 
-    char str2[200]; 
-
-    printf("Enter the first string: ");
-    fgets(str1, sizeof(str1), stdin);
-
-    size_t length1 = strlen(str1);
-    if (length1 > 0 && str1[length1 - 1] == '\n') {
-        str1[length1 - 1] = '\0';
-    }
-
-    printf("Enter the second string: ");
-    fgets(str2, sizeof(str2), stdin);
-
-    size_t length2 = strlen(str2);
-    if (length2 > 0 && str2[length2 - 1] == '\n') {
-        str2[length2 - 1] = '\0';
-    }
-
-    stringConcat(str1, str2);
-
-    printf("The combined string is: %s\n", str1);
-
+        str1[i] ='\0';
+        printf("\n output: %s", str1);
 }

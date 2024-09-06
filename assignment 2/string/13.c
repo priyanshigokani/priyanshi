@@ -2,26 +2,26 @@
 
 #include <stdio.h>
 
-void removeNonAlphabets(char* str) 
+void main()
 {
-    int i, j = 0;
-    for (i = 0; str[i] != '\0'; i++) 
+    char line[100];
+
+    printf("enter a string: ");
+    fgets(line, sizeof(line),stdin);
+
+    int i,j;
+    for(i=0,j; line[i]!='\0'; ++i)
     {
-        if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z')) 
+        while(!(line[i]>='a' && line[i]<='z') &&! (line[i]>='A'&& line[i]<='z')&&!(line[i]=='\0'))
         {
-            str[j++] = str[i];
+            for(j=i; line[j]!='\0'; ++j)
+            {
+                line[j]=line[j+1];
+            }
+            line[j]='\0';
         }
     }
-    str[j] = 0; 
-}
-
-void main() 
-{
-    char str[100];
-    printf("Enter a string: ");
-    fgets(str, sizeof(str), stdin);
-
-    removeNonAlphabets(str);
-
-    printf("Output String: %s", str);
+    
+    printf("output string: ");
+    puts(line);
 }

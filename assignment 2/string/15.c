@@ -2,50 +2,46 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 
-void main() 
+void main()
 {
-    char str[100], word[20], largest[20], smallest[20];
-    int i = 0, j = 0, firstWord = 1;
+    char lineOfString[100], sna[10] [20];
 
-    printf("Enter a string: ");
-    fgets(str, sizeof(str), stdin);
-    str[strcspn(str, "\n")] = 0; 
+    int i,j=0,k=0,m=0,n-0,max,min;
 
-    for (int i = 0; i <= strlen(str); i++) 
+    printf("enter line of string: ");
+    scanf("%s" lineOfString);
+
+    for(i=0; lineOfString[i]!=NULL; i++)
     {
-        if (isalnum(str[i])) 
+        if(lineOfString[i] ==' ')
         {
-            word[j++] = str[i];
-        } 
-        else 
+            sna[k][j]= '\0';
+            k++;
+            j=0;
+        }
+        else
         {
-            if (j != 0) 
-            {
-                word[j] = 0;
-                if (firstWord) 
-                {
-                    strcpy(largest, word);
-                    strcpy(smallest, word);
-                    firstWord = 0;
-                }
-                else 
-                {
-                    if (strlen(word) > strlen(largest)) 
-                    {
-                        strcpy(largest, word);
-                    }
-                    if (strlen(word) < strlen(smallest)) 
-                    {
-                        strcpy(smallest, word);
-                    }
-                }
-                j = 0;
-            }
+            sna[k][j]= lineOfString[i];
+            j++;
         }
     }
+    sna[k][j]='\0';
 
-    printf("The largest word is '%s'\n", largest);
-    printf("The smallest word is '%s'\n", smallest);
+    max=strlen(sna[0]);
+    min=strlen(sna[0]);
+
+    for(i=0; i<=k; i++)
+    {
+        if(max<strlen(sna[i]))
+        {
+            m=i;
+        }
+        if(min>strlen(sna[i]))
+        {
+            n=i;
+        }
+    }
+    printf("largest world = %s and smallest world = %s in a string",sna[m],sna[n]);
+
 }
