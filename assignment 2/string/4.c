@@ -19,10 +19,6 @@ void main()
         i++;
     }
 
-    // if (i > 1) 
-    // {
-    //     count++;
-    // }
 
     printf("Total number of words in the string: %d\n", count);
 
