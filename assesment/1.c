@@ -17,6 +17,7 @@
 #include <stdio.h>
 #include <string.h>
 
+// function declaration
 void reverseString(char str[]);
 void concatenateStrings(char str1[], char str2[]);
 void checkPalindrome(char str[]);
@@ -37,6 +38,7 @@ void main()
     int choice;
     char continueChoice;
 
+    // loop for operation until user choose exit
     do 
     {
         printf("welcome\n");
@@ -53,6 +55,7 @@ void main()
         printf("\nEnter your choice: ");
         scanf("%d", &choice);
 
+        // user's choice   
         switch (choice) 
         {
             case 1:
@@ -115,6 +118,7 @@ void main()
                 break;
         }
 
+        // ask if user wants to continue?
         printf("Do you want to continue (y/n)? ");
         scanf(" %c", &continueChoice);
     } 
@@ -123,16 +127,19 @@ void main()
     printf("thanks for exploring the string operations !\n");
 }
 
+// Reverse the string using strrev()
 void reverseString(char str[]) 
 {
     strrev(str);
 }
 
+// Combine two string using strcat()
 void concatenateStrings(char str1[], char str2[]) 
 {
     strcat(str1, str2);
 }
 
+// Check if string is palindrome 
 void checkPalindrome(char str[]) 
 {
     int len = strlen(str);
@@ -157,16 +164,20 @@ void checkPalindrome(char str[])
     }
 }
 
+// copy string using strcpy()
+
 void copyString(char source[], char destination[]) 
 {
     strcpy(destination, source);
 }
 
+
+// check the string length using strlen()
 int stringLength(char str[]) 
 {
     return strlen(str);
 }
-
+// to check frequency of characters
 void characterFrequency(char str[], char ch) 
 {
     int count = 0;
@@ -181,6 +192,7 @@ void characterFrequency(char str[], char ch)
     printf("The character '%c' appears %d times in the string.\n", ch, count);
 }
 
+// count the number of vowels and consonants in a string
 void countVowelsConsonants(char str[]) 
 {
     int vowels = 0, consonants = 0;
@@ -201,39 +213,24 @@ void countVowelsConsonants(char str[])
     printf("Vowels: %d, Consonants: %d\n", vowels, consonants);
 }
 
-// void countSpacesDigits(char str[]) 
-// {
-//     int spaces = 0, digits = 0;
-
-//     for (int i = 0; str[i] != '\0'; i++) 
-//     {
-//         if (isSpace(str[i])) 
-//         {
-//             spaces++;
-//         } 
-        
-//         else if (isDigit(str[i])) 
-//         {
-//             digits++;
-//         }
-//     }
-//     printf("Spaces: %d, Digits: %d\n", spaces, digits);
-// }
-
-// Function to count blank spaces and digits in a string
-void countSpacesDigits(char str[]) {
+// to count space and digit in a string
+void countSpacesDigits(char str[])
+ {
     int spaces = 0, digits = 0;
-    for (int i = 0; str[i] != '\0'; i++) {
-        if (str[i] == ' ') {  // Count space characters
+    for (int i = 0; str[i] != '\0'; i++)
+     {
+        if (str[i] == ' ') 
+        {  
             spaces++;
-        } else if (str[i] >= '0' && str[i] <= '9') {  // Count digit characters
+        } else if (str[i] >= '0' && str[i] <= '9') 
+        {  
             digits++;
         }
     }
     printf("Spaces: %d, Digits: %d\n", spaces, digits);
 }
 
-
+// to covert uppercase into lowercase
 char toLowerCase(char ch) 
 {
     if (ch >= 'A' && ch <= 'Z') 
@@ -243,21 +240,25 @@ char toLowerCase(char ch)
     return ch;
 }
 
+// to check the character is alphabets
 int isAlphabet(char ch) 
 {
     return (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z');
 }
 
+// to check if character is vowels
 int isVowel(char ch) 
 {
     return (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u');
 }
 
+// to check if character is space
 int isSpace(char ch) 
 {
     return ch == ' ';
 }
 
+// check if character is digit
 int isDigit(char ch) 
 {
     return ch >= '0' && ch <= '9';
