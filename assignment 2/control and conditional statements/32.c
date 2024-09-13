@@ -2,7 +2,7 @@
 //Gross salary according to following:
 //Basic Salary <= 10000 : HRA = 20%, DA = 80%
 //Basic Salary <= 20000 : HRA = 25%, DA = 90%
-//Basic Salary > 20000 : HRA = 30%, DA = 95%\
+//Basic Salary > 20000 : HRA = 30%, DA = 95%
 
 
 #include <stdio.h>
@@ -10,9 +10,10 @@
 void main() 
 {
     float basic_salary, HRA, DA, gross_salary;
+    int Calculate;
    
     printf("Enter the basic salary: Rs. ");
-    scanf("%f", &basic_Salary);
+    scanf("%f", &basic_salary);
 
     
     if (basic_salary <= 10000)
@@ -20,7 +21,7 @@ void main()
         HRA = basic_salary * 0.20;  
         DA = basic_salary * 0.80;   
     } 
-    else if (basicSalary <= 20000)
+    else if (basic_salary <= 20000)
      {
         HRA = basic_salary * 0.25;   
         DA = basic_salary * 0.90;    
@@ -31,11 +32,10 @@ void main()
         DA = basic_salary * 0.95;     
      }
 
-     Calculate Gross Salary
-    gross_salary = basicSalary + HRA + DA;
+    gross_salary = basic_salary + HRA + DA;
 
     
-    printf("The Gross Salary is: Rs. %.2f\n", grossSalary);
+    printf("The Gross Salary is: Rs. %.2f\n", gross_salary);
 
     
 }
