@@ -38,12 +38,13 @@ private:
 public:
     LectureDetails()
     {
+        // constructor to initialize lecture details
         lecturerName = "";
         subjectName = "";
         courseName = "";
         numberOfLecturers = 0;
     }
-
+    // function for assign values
     void assignValues(string name, string subject, string course, int numLecturers)
     {
         lecturerName = name;
@@ -52,6 +53,7 @@ public:
         numberOfLecturers = numLecturers;
     }
 
+    // function to show lecture details
     void showDetails()
     {
         cout << "Lecturer Name: " << lecturerName << endl;
@@ -85,6 +87,7 @@ int main()
         lecturers[i].assignValues(name, subject, course, numLecturers);
     }
 
+    // display lecture details
     cout << "\nLecture Details:"<<endl;
     for (int i = 0; i < 3; i++)
     {
