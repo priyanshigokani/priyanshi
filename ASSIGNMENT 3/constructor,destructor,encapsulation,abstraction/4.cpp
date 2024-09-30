@@ -1,80 +1,70 @@
-// Q.4  Write a C++ program to implement a class called Bank Account that has private member variables for account number and balance. 
-// Include member functions to deposit and withdraw money from the account. 
-
-#include<iostream>
-
+#include <iostream>
 using namespace std;
-
 
 class BankAccount
 {
-    int AccountNumber;
-    double Balance;
+private:
+    int accountNumber;
+    double balance;
 
-    public: 
-
-    BankAccount(int accNum, double balance)
+public:
+    BankAccount(int accNum, double initialBalance)
     {
-        AccountNumber=accNum;
-        Balance=balance;
+        accountNumber = accNum;
+        balance = initialBalance;
     }
 
-    void Deposit(double amount)
+    void deposit(double amount)
     {
-        if(amount > 0)
+        if (amount > 0)
         {
-            Balance += amount;
-            cout <<"Withdraw money: "<<amount<<endl;
-        }
-        else 
-        {
-            cout <<"Wrong input!";
+            balance += amount;
+            cout << "Deposited: " << amount << endl;
         }
     }
 
-     void WithdrawMoney(double amount)
+    void withdraw(double amount)
     {
-        if(amount > 0 && amount <= Balance)
+        if (amount > 0 && amount <= balance)
         {
-            Balance -= amount;
-            cout <<"Withdraw money: "<<amount<<endl;
+            balance -= amount;
+            cout << "Withdrawn: " << amount << endl;
         }
-        else if(amount > Balance)
+        else
         {
-            cout <<"Insufficient balance";
-        }
-        else 
-        {
-            cout <<"Wrong input!";
+            cout << "Insufficient balance!" << endl;
         }
     }
 
-    void displayAccountInfo()
-   const {
-        cout<<"Account number: "<<AccountNumber<<endl;
-        cout<<"Balance: "<<Balance<<endl;
+    void display() const
+    {
+        cout << "Account Number: " << accountNumber << endl;
+        cout << "Balance: " << balance << endl;
     }
-
 };
 
-    int main()
-    {
-        BankAccount account(12345, 1000.0);
+int main()
+{
+    int accountNumber;
+    double initialBalance, depositAmount, withdrawAmount;
 
-        account.displayAccountInfo();
+    cout << "Enter Account Number: ";
+    cin >> accountNumber;
+    cout << "Enter Initial Balance: ";
+    cin >> initialBalance;
 
+    BankAccount account(accountNumber, initialBalance);
+    account.display();
 
-        account.Deposit(500);
-        account.displayAccountInfo();
+    cout << "Enter amount to deposit: ";
+    cin >> depositAmount;
+    account.deposit(depositAmount);
+    account.display();
 
-        account.WithdrawMoney(300);
-        account.displayAccountInfo();
+    cout << "Enter amount to withdraw: ";
+    cin >> withdrawAmount;
+    account.withdraw(withdrawAmount);
+    account.display();
 
-        account.WithdrawMoney(1000);
-
-
-        return 0;
-    }
-
-
-
+    return 0;
+}

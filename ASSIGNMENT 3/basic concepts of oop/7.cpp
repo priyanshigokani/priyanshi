@@ -14,22 +14,22 @@
      public:
       circle(double r) : radius(r) {}
 
-     getArea()  
+     double getArea()  
      {
          return 3.14 * radius * radius;
      }
 
-     getCircumference()  
+     double getCircumference()  
      {
          return 2 * 3.14 * radius;
      }
 
-     setRadius(double r)
+     double setRadius(double r)
      {
          radius=r;
      }
 
-     getRadius()
+     double getRadius()
      {
          return radius;
      }

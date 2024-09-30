@@ -1,36 +1,20 @@
-// Q.8 Write a C++ program to implement a class called Student that has private member variables for name, class, roll number, and marks.
-//  Include member functions to calculate the grade based on the marks and display the student's information. Accept address from each
-//  student implement using of aggregation 
-
 #include <iostream>
 #include <string>
 using namespace std;
 
 class Address 
 {
-    string houseNo;
-    string street;
-    string city;
+    string address;
 
 public:
-    void setHouseNo(string hNo) 
+    void setAddress(string addr)
     {
-        houseNo = hNo;
-    }
-
-    void setStreet(string str) 
-    {
-        street = str;
-    }
-
-    void setCity(string c) 
-    {
-        city = c;
+        address = addr;
     }
 
     string getAddress() 
     {
-        return houseNo + ", " + street + ", " + city;
+        return address;
     }
 };
 
@@ -43,29 +27,24 @@ class Student
     Address address;
 
 public:
-    void setName(string n) 
+    void inputDetails()
     {
-        name = n;
-    }
+        cout << "Enter Name: ";
+        cin >> name;
+        
+        cout << "Enter Class: ";
+        cin >> studentClass;
+        
+        cout << "Enter Roll Number: ";
+        cin >> rollNumber;
+        
+        cout << "Enter Marks: ";
+        cin >> marks;
 
-    void setStudentClass(string c) 
-    {
-        studentClass = c;
-    }
-
-    void setRollNumber(int rNo)
-    {
-        rollNumber = rNo;
-    }
-
-    void setMarks(int m) 
-    {
-        marks = m;
-    }
-
-    void setAddress(Address addr) 
-    {
-        address = addr;
+        string addr;
+        cout << "Enter Address: ";
+        cin >> addr;
+        address.setAddress(addr);
     }
 
     char calculateGrade() 
@@ -74,12 +53,11 @@ public:
         {
             return 'A';
         }
-        
-        else if (marks >= 80)
+
+        else if (marks >= 80) 
         {
             return 'B';
         }
-        
         else if (marks >= 70) 
         {
             return 'C';
@@ -89,9 +67,8 @@ public:
         {
             return 'D';
         }
-        
-        else 
-        { 
+        else
+        {
             return 'F';
         }
     }
@@ -109,18 +86,8 @@ public:
 
 int main()
 {
-    Address studentAddress;
-    studentAddress.setHouseNo("13");
-    studentAddress.setStreet("Indira circle");
-    studentAddress.setCity("rajkot");
-
     Student student;
-    student.setName("ava");
-    student.setStudentClass("12th");
-    student.setRollNumber(7);
-    student.setMarks(77.3);
-    student.setAddress(studentAddress);
-
+    student.inputDetails();
     student.displayStudentInfo();
 
     return 0;
