@@ -1,0 +1,43 @@
+
+q.1
+
+table student 
+
+CREATE TABLE student (rollno int PRIMARY KEY, name varchar(20),branch varchar(20))
+INSERT into student VALUES(1,"jay","Computer science"),(2,"suhani","Electronic and com"),(3,"kriti","Electronic and com"); 
+
+second table of q.1
+create TABLE exam(rollno int,FOREIGN key(rollno) REFERENCES student(rollno),s_code varchar(20),marks int,p_code varchar(20));
+insert into exam VALUES(1,"CS11"50,"CS"),(1,"CS12"60,"CS"),(2,"EC101"66,"EC"),(2,"EC102"70,"EC"),(3,"ES101"45,"EC"),(3,"EC102"50,"EC");
+SELECT * from student;
+
+
+
+Q.2 
+create TABLE Employee (Employee_id int, First_name varchar(20),Last_name varchar(20),Salary int, Joining_date datetime,Department varchar(20));
+
+
+
+insert into Employee VALUES(1,"John","Abraham",1000000,"2013-01-01 12:00
+:00 AM","Banking"),
+(2,"Michael","Clarke",800000,"2013-01-01 12:00
+:00 AM","Insurance"),
+(3,"roy","Thomus",700000,"2013-02-01 12:00
+:00 AM","Banking"),
+(4,"Tom","Jose",600000,"2013-02-01 12:00
+:00 AM","Insurance"),
+(5,"Jerry","Pinto",650000,"2013-02-01 12:00
+:00 AM","Insurance"),
+(6,"Philip","Mathew",750000,0"2013-01-01 12:00
+:00 AM","Services"),
+(7,"TestName1","123",650000,"2013-01-01 12:00
+:00 AM","Services"),
+(8,"TestName2","Lname%",600000,"2013-02-01 12:00
+:00 AM","Insurance");
+
+second table
+CREATE table Incentive(Employeee_ref_id int, Incentive_date date, Incentive_amount int);
+insert into Incentive VALUES(1,'01-FEB-13',5000),(2,'01-FEB-13',3000),(3,'01-FEB-13',4000),(1,'01-JAN-13',4500),(2,'01-JAN-13',3500);
+
+INSERT into incentive VALUES (2,2013-02-01,3000),
+(3,2013-02-01,4000)
