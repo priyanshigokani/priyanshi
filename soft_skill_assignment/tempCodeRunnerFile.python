@@ -1,0 +1,12 @@
+id=7
+name= "priyanshi"
+    
+
+class stud_info:
+    def info(self,id,name):
+        print("id: ", id)
+        print("name: ", name)
+
+class data(stud_info):
+    def info(self, id, name):
+        return super().info(id, name)
